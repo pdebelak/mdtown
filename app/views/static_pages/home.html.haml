@@ -1,0 +1,26 @@
+.container
+  .jumbotron
+    %h1 Welcome to MDTown!
+    %p A place where you can type markdown into a box, have html come out, and then share it with the world!
+    %p
+      = link_to 'Learn more', '#about', class: 'btn btn-primary btn-lg', role: 'button'
+  #about
+    %h1 MDTown is a place to share your writing
+    %p You have complete control over the appearance of your writing (no more WYSIWYG editors!) without the hassle of writing html. Instead you use markdown.
+    %p
+      Markdown is an easy-to-read and easy-to-write syntax that turns into html. See syntax details
+      = link_to 'here', 'http://daringfireball.net/projects/markdown/syntax'
+      to learn all the ins and out. Yes, you have to learn a new syntax, but trust me, it's easy and more fun that either WYSIWYG or html.
+    = link_to 'Try it now', '#try-mdtown', class: 'btn btn-primary btn-lg', role: 'button'
+
+
+#try-mdtown
+  %hr
+  %h1.text-center Try MDTown
+  %p.text-center.lead Type some markdown here on the left and see it on the right
+  .container-fluid
+    .row
+      .col-sm-6
+        #editor
+      .col-sm-6
+        #output
