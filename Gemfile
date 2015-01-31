@@ -54,6 +54,8 @@ end
 gem 'redcarpet'
 gem "haml-rails", "~> 0.8"
 
+gem 'rails_12factor', group: :production
+
 group :development, :test do
   gem 'rspec-rails', '~> 3.0'
   gem 'capybara'
