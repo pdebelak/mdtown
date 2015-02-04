@@ -5,13 +5,58 @@
     %p
       = link_to 'Learn more', '#about', class: 'btn btn-primary btn-lg', role: 'button'
   #about
-    %h1 MDTown is a place to share your writing
-    %p You have complete control over the appearance of your writing (no more WYSIWYG editors!) without the hassle of writing html. Instead you use markdown.
-    %p
-      Markdown is an easy-to-read and easy-to-write syntax that turns into html. See syntax details
-      = link_to 'here', 'http://daringfireball.net/projects/markdown/syntax'
-      to learn all the ins and out. Yes, you have to learn a new syntax, but trust me, it's easy and more fun that either WYSIWYG or html.
-    = link_to 'Try it now', '#try-mdtown', class: 'btn btn-primary btn-lg', role: 'button'
+    .row
+      .col-md-10.col-md-push-1
+        %h1 MDTown is a place to share your writing
+        %p You have complete control over the appearance of your writing (no more WYSIWYG editors!) without the hassle of writing html. Instead you use markdown.
+        %p Markdown is an easy-to-read and easy-to-write syntax that turns into html.
+        %h2 Some examples:
+        .row
+          .col-xs-6
+            %h3 This
+          .col-xs-6
+            %h3 Becomes this
+        .row.example
+          .col-xs-6
+            %pre A paragraph
+          .col-xs-6
+            %p A paragraph
+        .row.example
+          .col-xs-6
+            %pre [example.com](http://www.example.com/)
+          .col-xs-6
+            = link_to 'example.com', 'http://www.example.com/'
+        .row.example
+          .col-xs-6
+            %pre # A heading
+          .col-xs-6
+            %h1 A heading
+        .row.example
+          .col-xs-6
+            %pre ### A smaller heading
+          .col-xs-6
+            %h3 A smaller heading
+        .row.example
+          .col-xs-6
+            %pre= "* an unordered\n* list"
+          .col-xs-6
+            %ul
+              %li an unordered
+              %li list
+        .row.example
+          .col-xs-6
+            %pre= "1. an ordered\n2. list"
+          .col-xs-6
+            %ol
+              %li an ordered
+              %li list
+        %p
+          See syntax details
+          = link_to 'here', 'http://daringfireball.net/projects/markdown/syntax'
+          to learn all the ins and out. Yes, you have to learn a new syntax, but trust me, it's easy and more fun that either WYSIWYG or html.
+        = link_to 'Try it out', '#try-mdtown', class: 'btn btn-primary btn-lg', role: 'button'
+        %span.h3 or
+        =link_to 'Sign up', '', class: 'btn btn-success btn-lg', role: 'button'
 
 
 #try-mdtown
@@ -20,7 +65,7 @@
   %p.text-center.lead Type some markdown here on the left and see it on the right
   .container-fluid
     .row
-      .col-sm-6
-        #editor
-      .col-sm-6
+      .col-xs-6
+        #editor{ data: { output: '#output' } }
+      .col-xs-6
         #output

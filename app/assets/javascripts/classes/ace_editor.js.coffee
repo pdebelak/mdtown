@@ -5,10 +5,12 @@ class AceEditor
     @createEditor() if @editor
       
   createEditor: ->
-    @editor.getSession().setMode("ace/mode/markdown");
+    @editor.getSession().setMode "ace/mode/markdown"
+    @editor.getSession().setUseWrapMode true
     @editor.getSession().on 'change', =>
       value = @editor.getValue()
-      $('#output').html marked value
+      output = $('#editor').attr 'data-output'
+      $(output).html marked value
     
   
 

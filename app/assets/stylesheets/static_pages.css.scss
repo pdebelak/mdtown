@@ -1,3 +1,17 @@
 #editor, #output {
   overflow-y: scroll;
 }
+#about {
+  .example {
+    margin-top: 15px;
+    h1, h3 {
+      margin: 0;
+    }
+    ul, ol {
+      padding-left: 15px;
+    }
+  }
+  .h3 {
+    margin: 0 15px;
+  }
+}
